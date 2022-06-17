@@ -181,7 +181,7 @@ let config = {
                 exclude: /(node_modules|bower_components)/ //不需要转码的文件【只需要用babel转码自己的项目中用到的文件即可，其他插件不需要它来转码，不然一堆没用的log看都看不过来】
 
             }, {
-                test: /\.s[ac]ss$/, //.scss|sass|css文件编译：正常编译顺序为顺序 style-loader|mini-css-extract-plugin； css-loader 和 sass-loader 来编译处理;use里面是一个loader数组
+                test: /\.(sass|scss|css)$/, //.scss|sass|css文件编译：正常编译顺序为顺序 style-loader|mini-css-extract-plugin； css-loader 和 sass-loader 来编译处理;use里面是一个loader数组
                 oneOf: [{
                     resourceQuery: /mc/, //在js中用import styles from "./index.scss?mc";//不同后缀，解析不同的rem，每个页面的rem对应的px可能不一样"./index.scss?l"，解析的时候，做不同的处理
                     use: getLoader("mc") //如果js中require了多个css文件，nameExtractTextPlugin会把多个css文件合并成一个，这个css是否压缩，主要看use里面的第一个匹配项的设置是否压缩

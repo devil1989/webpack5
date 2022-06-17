@@ -137,7 +137,8 @@ let config = {
             'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm.js'),//默认是运行时版本，没有compile，dev环境下引入需要完整版，vue.esm.js，有编译器才能编译template
             'Redux': path.resolve(__dirname, '../node_modules/redux'),
             'ReactRedux': path.resolve(__dirname, '../node_modules/react-redux'),
-            'ReduxThunk': path.resolve(__dirname, '../node_modules/redux-thunk')
+            'ReduxThunk': path.resolve(__dirname, '../node_modules/redux-thunk'),
+            'core-js/library/fn':path.resolve(__dirname, '../node_modules/core-js/features')//因为ant-design用到了core-js2.6.11，不兼容core-js3.X版本，导致报错
         }
     },
     optimization: { //替代webpack.optimize.OccurrenceOrderPlugin()

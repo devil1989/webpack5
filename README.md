@@ -1,5 +1,9 @@
 # webpack5
 
+用webpack5打包站点案例，可以用作新站点的最初蓝本；里面只有3个demo页面，特别注意的是wepack.config.dll.dev.js和wepack.config.dll.prod.js里面把react和vue的相关外部框架都打在一起了，
+自己项目中用不到的外部脚本，直接在这两个文件的entry中删除对应的框架，以免外部依赖包过大影响页面加载；
+
+
 代码拉下来后的简易使用流程：
   1.npm install【安装npm插件包】
   2.npm start【启动项目】
